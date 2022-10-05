@@ -1,0 +1,12 @@
+apiVersion: v2
+name: prometheus
+description: Prometheus release for NextJS Grpc
+
+type: application
+version: 1.1.30
+appVersion: "1.16.0"
+
+dependencies:
+  - name: prometheus
+    repository: https://prometheus-community.github.io/helm-charts
+    version: 15.11.0
