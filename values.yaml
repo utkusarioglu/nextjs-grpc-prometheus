@@ -9,10 +9,21 @@ prometheus:
     ingress:
       enabled: true
       hosts:
-        - TF_POPULATED
+        - <TF_POPULATED>
       path: /
-      # path: /prometheus(/|$)(.*)
       annotations:
-        kubernetes.io/ingress.class: public
-        # nginx.ingress.kubernetes.io/rewrite-target: /$2
-        # nginx.ingress.kubernetes.io/use-regex: "true"
+        nginx.ingress.kubernetes.io/enable-opentracing: "true"
+        nginx.ingress.kubernetes.io/opentracing-trust-incoming-span: "true"
+        kubernetes.io/tls-acme: "true"
+        kubernetes.io/ingress.class: <TF_POPULATED>
+
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+        alb.ingress.kubernetes.io/ssl-redirect: "443"
+        external-dns.alpha.kubernetes.io/alias: "true"
+
+        alb.ingress.kubernetes.io/target-type: ip
+        alb.ingress.kubernetes.io/group.name: nextjs-grpc
+        alb.ingress.kubernetes.io/load-balancer-name: nextjs-grpc
+        alb.ingress.kubernetes.io/security-groups: <TF_POPULATED>
+        external-dns.alpha.kubernetes.io/hostname: <TF_POPULATED>
