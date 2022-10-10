@@ -3,7 +3,7 @@ name: prometheus
 description: Prometheus release for NextJS Grpc
 
 type: application
-version: 1.1.30
+version: 1.1.32
 appVersion: "1.16.0"
 
 dependencies:

@@ -6,6 +6,8 @@ prometheus:
   pushgateway:
     enabled: false
   server:
+    persistentVolume:
+      enabled: false
     ingress:
       enabled: true
       hosts:
