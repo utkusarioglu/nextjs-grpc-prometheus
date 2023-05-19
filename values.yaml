@@ -14,8 +14,8 @@ prometheus:
         - <TF_POPULATED>
       path: /
       annotations:
-        nginx.ingress.kubernetes.io/enable-opentracing: "true"
-        nginx.ingress.kubernetes.io/opentracing-trust-incoming-span: "true"
+        # nginx.ingress.kubernetes.io/enable-opentracing: "true"
+        # nginx.ingress.kubernetes.io/opentracing-trust-incoming-span: "true"
         kubernetes.io/tls-acme: "true"
         kubernetes.io/ingress.class: <TF_POPULATED>
 
